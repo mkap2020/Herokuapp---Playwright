@@ -2,6 +2,7 @@ import { expect, test } from '@playwright/test';
 import { LoginPage } from '../pages/login';
 
 test.describe('Login Flow', () => {
+    //login test
   test('Login Test with valid credentials', async ({ page }) => {
     const loginPage = new LoginPage(page);
 
