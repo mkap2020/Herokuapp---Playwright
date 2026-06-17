@@ -1,0 +1,13 @@
+import { expect, test } from '@playwright/test';
+import { LoginPage } from '../pages/login';
+
+test.describe('Login Flow', () => {
+  test('Login Test with valid credentials', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+
+    await loginPage.goToLoginPage();
+    await loginPage.login('tomsmith', 'SuperSecretPassword!');
+
+    await expect(page.locator('#flash')).toContainText('You logged into a secure area!');
+  });
+});
