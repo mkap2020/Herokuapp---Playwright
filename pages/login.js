@@ -4,6 +4,7 @@ export class LoginPage {
     this.usernameInput = page.locator('#username');
     this.passwordInput = page.locator('#password');
     this.loginButton = page.locator('button[type="submit"]');
+    this.githubForklink = page.locator('img[alt="Fork me on GitHub"]');
   }
 
   async goToLoginPage() {
@@ -15,4 +16,11 @@ export class LoginPage {
     await this.passwordInput.fill(password);
     await this.loginButton.click();
   }
+
+  async clickGithubForkLink() {
+    await this.githubForklink.click();
+  }
 }
+
+
+ 

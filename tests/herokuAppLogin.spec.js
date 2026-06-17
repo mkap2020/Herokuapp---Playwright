@@ -10,5 +10,8 @@ test.describe('Login Flow', () => {
     await loginPage.login('tomsmith', 'SuperSecretPassword!');
 
     await expect(page.locator('#flash')).toContainText('You logged into a secure area!');
+
+    await loginPage.clickGithubForkLink();
+    await expect(page).toHaveURL('https://github.com/saucelabs/the-internet');
   });
 });
